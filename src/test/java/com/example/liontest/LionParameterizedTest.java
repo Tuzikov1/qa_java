@@ -1,4 +1,4 @@
-package com.example.LionTest;
+package com.example.liontest;
 
 import com.example.Feline;
 import com.example.Lion;
@@ -9,11 +9,12 @@ import org.junit.runners.Parameterized;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class LionTestParameterized {
+public class LionParameterizedTest {
     private String sex;
     private boolean expected;
 
-    public LionTestParameterized(String sex, boolean expected) {
+
+    public LionParameterizedTest(String sex, boolean expected) {
         this.sex = sex;
         this.expected = expected;
     }

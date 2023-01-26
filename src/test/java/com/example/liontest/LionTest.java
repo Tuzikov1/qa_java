@@ -1,4 +1,4 @@
-package com.example.LionTest;
+package com.example.liontest;
 
 import com.example.Animal;
 import com.example.Feline;
@@ -19,8 +19,6 @@ import static org.junit.Assert.assertEquals;
 public class LionTest {
 
     @Mock
-    Animal animal;
-    @Mock
     Feline feline;
 
 
@@ -33,7 +31,7 @@ public class LionTest {
 
 
     @Test
-    public void doesHaveManeShowException()  {
+    public void doesHaveManeIncorrectSexShowTextException()  {
         Exception exception= Assert.assertThrows(Exception.class,()-> new Lion("самец", feline));
         assertEquals("Используйте допустимые значения пола животного - самец или самка",exception.getMessage());
 
@@ -41,10 +39,9 @@ public class LionTest {
 
     @Test
     public void getFoodShowPositiveOutput() throws Exception {
-       Feline feline = new Feline();
         Lion lion = new Lion("Самец",feline);
         List<String> expected =Arrays.asList("Животные", "Птицы", "Рыба");
-        Mockito.when(animal.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
        assertEquals(expected, lion.getFood());
 
     }

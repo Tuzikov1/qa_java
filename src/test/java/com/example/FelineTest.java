@@ -16,15 +16,13 @@ import static org.junit.Assert.*;
 public class FelineTest {
 
     @Mock
-    Animal animal;
-    @Mock
     Feline feline;
 
     @Test
     public void eatMeatShowPositiveOutput() throws Exception {
         Feline feline1= new Feline();
         List<String> expected =Arrays.asList("Животные", "Птицы", "Рыба");
-        Mockito.when(animal.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
         Assert.assertEquals(expected,feline1.eatMeat());
 
 
@@ -39,9 +37,8 @@ public class FelineTest {
 
     @Test
     public void getKittensOneCountShowResult() {
-        Mockito.when(feline.getKittens(1)).thenReturn(1);
-        Mockito.when(feline.getKittens()).thenCallRealMethod();
-       assertEquals(1,feline.getKittens());
+        Feline feline1=new Feline();
+       assertEquals(5,feline1.getKittens(5));
 
     }
 
